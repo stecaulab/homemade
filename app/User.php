@@ -38,6 +38,13 @@ class User extends Authenticatable
 
     //relationship User-> Article One to Many
 
+    public function roles()
+        {
+        
+            return $this->belongsToMany(Role::class);
+        }
+
+    
     public function articles()
     {
         return $this->hasMany('App\Article');
