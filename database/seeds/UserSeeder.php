@@ -1,7 +1,10 @@
 <?php
 
-use App\User;
+
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use App\Role;
+use App\User;
 
 class UserSeeder extends Seeder
 {
@@ -13,23 +16,34 @@ class UserSeeder extends Seeder
     public function run()
     {
 
-        User::create([
-            'name' => 'Francesco',
-            'last_name' => 'Malatesta',
-            'slug' => 'francesco_malatesta',
+       $role_regular_user = Role::where('name','user')->first();
+       $role_admin_user= Role::where('name','admin')->first();
 
-            'email' => 'hey@hellofrancesco.com',
-            'password' => \Hash::make('123456')
-        ]);
+       $admin = new User();
+       $admin->name      =   'Stefano';
+       $admin->last_name =   'Cauzzi';
+       $admin->email     =   'cauzzistefano@gmail.com';
+       $admin->password  =  Hash::make('caufer8182');
+       $admin->slug      =   'SteCauLab';
+       $admin->save();
+       $admin->roles()->attach($role_admin_user);
 
-        User::create([
-            'name' => 'Paolo',
-            'last_name' => 'Rossi',
-            'slug' => 'paolo_rossi',
+       $admin = new User();
+       $admin->name      = 'Federica';
+       $admin->last_name =   'Ferro';
+       $admin->email     =  'federicaferro@gmail.com';
+       $admin->password  =   Hash::make('fedefer86');
+       $admin->slug      =   'FedeFer';
+       $admin->save();
+       $admin->roles()->attach($role_admin_user);
 
-            'email' => 'hey@paolorossi.com',
-            'password' => \Hash::make('654321')
-        ]);
-
+       $regular_user = new User;
+       $regular_user->name      = 'Samuel';
+       $regular_user->last_name =   'Jackson';
+       $regular_user->email     =  'samueljackson@gmail.com';
+       $regular_user->password  =   Hash::make('samujack1234');
+       $regular_user->slug      =   'SamJack';
+       $regular_user->save();
+       $regular_user->roles()->attach($role_regular_user);
     }
 }

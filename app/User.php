@@ -40,13 +40,33 @@ class User extends Authenticatable
 
     public function roles()
         {
-        
+
             return $this->belongsToMany(Role::class);
         }
 
-    
+
     public function articles()
     {
         return $this->hasMany('App\Article');
+    }
+
+    public function checkRoles($roles){
+
+        if(is_array($roles)){
+            return $this->hasRole($roles) || abort(404);
+        }
+
+        return $this->hasRole($roles) || abort(404);
+
+    }
+
+    public function hasAnyRole($roles)
+    {
+        return null !== $this->roles()->whereIn('name',$roles)->first();
+    }
+
+    public function hasRole($role):bool
+    {
+        return null !== $this->roles()->where('name',$role)->first();
     }
 }

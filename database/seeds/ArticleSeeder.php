@@ -3,6 +3,7 @@
 use App\User;
 use App\Article;
 use App\Category;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
 class ArticleSeeder extends Seeder
