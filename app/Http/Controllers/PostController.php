@@ -14,10 +14,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post   =   new Post();
-        $post->user_id  =   2;
-        $post->title= "Using laravel Seeders";
-        $post->body =lorem*50
 
     }
 
