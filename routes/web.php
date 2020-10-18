@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/* route per vedere singolo post*/
+
+Route::get('/posts/{post}', 'PostController@single');
+
+/* route per vedere tutti i post*/
+
+Route::get('/','PostController@all');
+
