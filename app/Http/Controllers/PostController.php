@@ -86,6 +86,7 @@ class PostController extends Controller
 
     /**
      * He retrieve five created posts per page and send to landing view.
+     * use paginate for show five post for page
      */
      public function all()
     {
