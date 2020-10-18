@@ -44,6 +44,10 @@ class User extends Authenticatable
             return $this->belongsToMany(Role::class);
         }
 
+    public function posts(){
+
+        return $this->hasMany(Post::class);
+    }
 
     public function articles()
     {
@@ -65,7 +69,7 @@ class User extends Authenticatable
         return null !== $this->roles()->whereIn('name',$roles)->first();
     }
 
-    public function hasRole($role):bool
+    public function hasRole($role)
     {
         return null !== $this->roles()->where('name',$role)->first();
     }
