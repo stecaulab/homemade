@@ -30,3 +30,8 @@ Route::get('/posts/{post}', 'PostController@single');
 
 Route::get('/','PostController@all');
 
+/* route per Admint*/
+
+
+
+Route::get('/admin/{any}', 'AdminController@index')->where('any','.*');
