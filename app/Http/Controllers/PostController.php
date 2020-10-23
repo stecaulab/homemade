@@ -10,13 +10,16 @@ use App\Http\Resources\PostResource;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
+     *  Display a listing of the resource.
+     *  leggo tutti i ost creati o un singolo post.
+     *  cio è possibile perchè il metodo apiResource() definiscele rotte API
+     *  utilizzando regole REST standard
+
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-
+            return PostResource::collection(Post::lastet()->paginate(5));
     }
 
     /**
@@ -76,7 +79,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return new PostResource($post);
     }
 
     /**
@@ -92,6 +95,9 @@ class PostController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * riceve una richiesta e un Post_id come parametri,quindi utilizziamo
+     * l'assocoazione del Model per risolver istanza dell'id in un istanza di un post
+     * covalidiamo $request e poi aggiorniamo title e body
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Post  $post
@@ -99,18 +105,29 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $this->validate($request, [
+
+                'title'     =>      'required',
+                'body'      =>      'required',
+        ]);
+
+        $post->update($request->only(['title', 'body']));
+
+        return new PostResource($post);
     }
 
     /**
      * Remove the specified resource from storage.
+     *  resolve the Post instance then delete it and return 204 response code
      *
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return response()->json(null, 204);
     }
 
 
