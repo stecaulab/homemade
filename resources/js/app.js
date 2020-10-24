@@ -6,7 +6,7 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+//window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -27,6 +27,31 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+ import Vue from 'vue';
+ import VueRouter from 'vue-router'; //importo Vue Router
+ import Homepage from './components/Homepage'; //importo componente Homepage
+ import Read from './components/Read'; //importo componente read
+
+ Vue.use(VueRouter);
+
+ const router = new VueRouter({
+
+        mode: 'history',
+
+        routes:  [
+            {
+
+                path:   '/admin/dashboad',
+                name:   'read',
+                components: Read,
+                props: true
+            },
+         ],
+
+});
+
 const app = new Vue({
     el: '#app',
+    router,
+    components: { Homepage },
 });
