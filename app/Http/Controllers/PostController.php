@@ -54,7 +54,7 @@ class PostController extends Controller
         if($request->hasFile('image')) {
 
             $image              =   $request->file('image');
-            $name               =   Str::slug($request->title).'.'.$image->getClientOriginalExtension();
+            $name               =   Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
             $destinationPath    =   public_path('/uploads/posts');
             $imagePath          =   $destinationPath . "/" . $name;
             $image->move($destinationPath, $name);
