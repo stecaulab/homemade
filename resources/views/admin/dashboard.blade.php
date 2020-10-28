@@ -7,7 +7,11 @@
 
     <!-- CSRF Token protection in all our frontend -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script>window.Laravel = {csrfToken:'csrf_token()'}</script>
+    <script>
+
+        window.Laravel = {csrfToken:'csrf_token()'}
+
+    </script>
 
     <title>Pannello di Controllo Admin </title>
 
@@ -16,20 +20,25 @@
     <link rel="stylesheet" href="{!! asset('css/clean-blog.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/fontawesome/css/all.min.css') !!}">
 
-    <!-- Scripts -->
-     <script src="{!! asset('js/clean-blog.js') !!}"></script>
+
+     <style>
+            html, body {
+                    background-color: #202b33;
+                    color:#738491;
+                    font-family: "Open Sans";
+                    overflow:hidden;
+            }
+     </style>
 
 </head>
 <body>
 
     <div id="app">
-        <Homepage
+        <homepage-component :user-name='@json(auth()->user()->name)' :user-id='@json(auth()->user()->id)' >
 
-            :user-name: '@json(auth()->user()->name)'
-            :user-id:   '@json(auth()->user()->id)'
-        >
+        </homepage-component>
 
-        </Homepage>
+
     </div>
 
 

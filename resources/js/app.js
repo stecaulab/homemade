@@ -6,21 +6,22 @@
 
 require('./bootstrap');
 
-//window.Vue = require('vue');
+// window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+// /**
+//  * The following block of code may be used to automatically register your
+//  * Vue components. It will recursively scan this directory for the Vue
+//  * components and automatically register them with their "basename".
+//  *
+//  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+//  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// // const files = require.context('./', true, /\.vue$/i)
+// // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('homepage-component', require('./components/HomepageComponent.vue').default);
+Vue.component('read-component', require('./components/ReadComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,10 +30,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
  import Vue from 'vue';
  import VueRouter from 'vue-router'; //importo Vue Router
- import Homepage from './components/Homepage'; //importo componente Homepage
- import Read from './components/Read'; //importo componente read
 
- Vue.use(VueRouter);
+ Vue.use(VueRouter)
+
+ import HomepageComponent from './components/HomepageComponent.vue'; //importo componente Homepage
+ import ReadComponent from './components/ReadComponent.vue'; //importo componente read
+
+
 
  const router = new VueRouter({
 
@@ -41,11 +45,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
         routes:  [
             {
 
-                path:   '/admin/dashboad',
+                path:   '/admin/dashboard',
                 name:   'read',
-                components: Read,
-                props: true
+                component: ReadComponent,
+
             },
+
          ],
 
 });
@@ -53,5 +58,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     router,
-    components: { Homepage },
+    components: { HomepageComponent },
+
 });

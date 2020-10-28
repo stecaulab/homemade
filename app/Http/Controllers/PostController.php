@@ -6,6 +6,7 @@ use App\Post;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Resources\PostResource;
+use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
 {
@@ -19,7 +20,8 @@ class PostController extends Controller
      */
     public function index()
     {
-            return PostResource::collection(Post::lastet()->paginate(5));
+         return  PostResource::collection(Post::paginate(5));
+
     }
 
     /**
@@ -139,7 +141,7 @@ class PostController extends Controller
     {
         return view('landing',[
 
-                'posts' =>  Post::latest()->paginate(5)
+                'posts' =>  Post::paginate(5)
         ]);
     }
 

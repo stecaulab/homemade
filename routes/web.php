@@ -34,4 +34,4 @@ Route::get('/','PostController@all');
 
 
 
-Route::get('/admin/{any}', 'AdminController@index')->where('any','.*');
+Route::get('/admin/{any}', 'AdminController@index')->where('any', '.*');
