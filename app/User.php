@@ -49,9 +49,10 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function articles()
+    //relazione 1 a molti tra utente e commento
+    public function comments()
     {
-        return $this->hasMany('App\Article');
+        return $this->hasMany(Comment::class);
     }
 
     public function checkRoles($roles){
