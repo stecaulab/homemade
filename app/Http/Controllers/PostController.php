@@ -141,7 +141,7 @@ class PostController extends Controller
     {
         return view('landing',[
 
-                'posts' =>  Post::paginate(5)
+                'posts' =>  Post::simplePaginate(5)
         ]);
     }
 
