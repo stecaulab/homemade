@@ -15,10 +15,6 @@
 
                         </router-link>
                     </li>
-                    <li>
-                        <router-link :to="{name : 'read'}">READ</router-link>
-
-                    </li>
                 </ul>
             </section>
         </nav>
@@ -49,6 +45,7 @@ export default {
             type:String,
             required: true
         }
+
     },
 
     data(){
@@ -68,6 +65,8 @@ export default {
     }
 };
 </script>
+
+
 
 <style scoped>
       @import url(https://fonts.googleapis.com/css?family=Dosis:300|Lato:300,400,600,700|Roboto+Condensed:300,700|Open+Sans+Condensed:300,600|Open+Sans:400,300,600,700|Maven+Pro:400,700);

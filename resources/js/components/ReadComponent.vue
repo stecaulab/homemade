@@ -1,7 +1,7 @@
 
 <template>
     <div id="posts">
-        <div  v-for="post in posts" :key="post.id"  class="border p-3">
+        <div  v-for="post in posts" :key="post.id"  class="border p-3 postLoop">
             {{ post.title }}
             <span class="float-right">
              <router-link :to="{ name: 'update', params: { postId : post.id }}">
@@ -59,3 +59,10 @@ export default {
   }
 };
 </script>
+<style>
+.postLoop{
+    margin-bottom: 10px;
+}
+
+
+</style>
