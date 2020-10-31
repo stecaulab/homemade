@@ -22,6 +22,8 @@ require('./bootstrap');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('homepage-component', require('./components/HomepageComponent.vue').default);
 Vue.component('read-component', require('./components/ReadComponent.vue').default);
+Vue.component('update-component', require('./components/UpdateComponent.vue').default);
+Vue.component('create-component', require('./components/CreateComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -35,7 +37,8 @@ Vue.component('read-component', require('./components/ReadComponent.vue').defaul
 
  import HomepageComponent from './components/HomepageComponent.vue'; //importo componente Homepage
  import ReadComponent from './components/ReadComponent.vue'; //importo componente read
-
+ import UpdateComponent from './components/UpdateComponent.vue';
+ import CreateComponent from './components/CreateComponent.vue';
 
 
  const router = new VueRouter({
@@ -48,7 +51,23 @@ Vue.component('read-component', require('./components/ReadComponent.vue').defaul
                 path:   '/admin/dashboard',
                 name:   'read',
                 component: ReadComponent,
+                props:true,
+            },
 
+            {
+
+                path:   '/admin/dashboard/update',
+                name:   'update',
+                component: UpdateComponent,
+                props:true,
+            },
+
+            {
+
+                path:   '/admin/dashboard/create',
+                name:   'create',
+                component: CreateComponent,
+                props:true,
             },
 
          ],
