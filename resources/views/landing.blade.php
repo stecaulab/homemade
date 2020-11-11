@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+    @section('title')Home Page
+
+    @endsection
     @section('content')
     <div class="container">
       <div class="row align-items-center">
@@ -7,18 +10,27 @@
           <h1 class="my-5 text-center">Welcome to the Blog </h1>
 
           @foreach ($posts as $post)
-          <div class="card mb-4">
-            <img class="card-img-top" src=" {!! !empty($post->image) ? '/uploads/posts/' . $post->image :  'http://placehold.it/750x300' !!} " alt="Card image cap">
-            <div class="card-body">
-              <h2 class="card-title text-center">{{ $post->title }}</h2>
-              <p class="card-text"> {{ Str::limit($post->body, $limit = 280, $end = '...') }} </p>
-              <a href="/posts/{{ $post->id }}" class="btn btn-primary">Read More &rarr;</a>
+            <div class="card mb-4">
+                <img class="card-img-top" src=" {!! !empty($post->image) ? '/uploads/posts/' . $post->image :  'http://placehold.it/750x300' !!} " alt="Card image cap">
+                <div class="card-body">
+                <h2 class="card-title text-center">{{ $post->title }}</h2>
+                <p class="card-text"> {{ Str::limit($post->body, $limit = 280, $end = '...') }} </p>
+                <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted {{ $post->created_at->diffForHumans() }} by
+                    <a href="#">{{ $post->user->name }} </a>
+
+                    <p>
+                        <b>Categoria:</b>
+
+                        @foreach ($post->categories as $category)
+                            <a href="{{ url('categoria/' . $category->slug) }}">{{ $category->name }}</a>
+                        @endforeach
+                    </p>
+                </div>
+
             </div>
-            <div class="card-footer text-muted">
-              Posted {{ $post->created_at->diffForHumans() }} by
-              <a href="#">{{ $post->user->name }} </a>
-            </div>
-          </div>
           @endforeach
 
         </div>

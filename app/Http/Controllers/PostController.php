@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
+use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Resources\PostResource;
@@ -139,9 +141,16 @@ class PostController extends Controller
      */
      public function all()
     {
+
+        $categories = Category::all();
+
+
+
+        $posts = Post::with('categories','user')->simplePaginate(5);
         return view('landing',[
 
-                'posts' =>  Post::simplePaginate(5)
+                'posts'      =>     $posts,
+                'categories' =>     $categories,
         ]);
     }
 
@@ -151,8 +160,11 @@ class PostController extends Controller
      * a un istanza Post con lo stesso ID
      */
 
-    public function single(Post $post){
+    public function single(Post $post, $slug){
 
-        return view('single', compact('post'));
+        $categories = Category::all();
+
+        $post = Post::with('categories' , 'user')->where('slug' , '=', $slug)->first();
+        return view('single', compact('post' , 'categories'));
     }
 }

@@ -11,19 +11,23 @@
       <img class="img-fluid rounded" src=" {!! !empty($post->image) ? '/uploads/posts/' . $post->image :  'http://placehold.it/750x300' !!} " alt="">
       <hr>
       <p class="lead">{{ $post->body }}</p>
+
+      @auth
       <hr>
       <div class="card my-4">
-        <h5 class="card-header">Leave a Comment:</h5>
         <div class="card-body">
-          <form>
-            <div class="form-group">
-              <textarea class="form-control" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+                <comment-component
+                        :post-id = '@json($post->id)'
+                        :user-name = '@json(auth()->user()->name)'>
+
+                </comment-component>
+            @endauth
         </div>
       </div>
     </div>
   </div>
 </div>
 @endsection
+
+
+

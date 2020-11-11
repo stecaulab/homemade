@@ -19,20 +19,21 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
-    <link rel="stylesheet" href="{!! asset('css/clean-blog.css') !!}">
+    <link rel="stylesheet" href="{{asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{asset('css/clean-blog.css') }}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/fontawesome/css/all.min.css') !!}">
     <!-- Scripts -->
-     <script src="{!! asset('js/app.js') !!}"></script>
-     <script src="{!! asset('js/clean-blog.js') !!}"></script>
+     <script src="{{asset('js/app.js') }}" defer></script>
+     <script src="{{asset('js/clean-blog.js')}}"></script>
 </head>
 
 <body>
+
     <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                FF-HomemadeBlog
+                FF-HomemadeBlog-master
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -47,9 +48,27 @@
                       <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="post.html">Sample Post</a>
+
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Categorie
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @foreach ($categories  as $category)
+
+                            <a class="dropdown-item" href="{{ url('categoria/' . $category->slug) }}">
+
+                                {{ $category->name }}
+                            </a>
+
+                            @endforeach
+
+                        </div>
                       </li>
+
+
+
+
                       <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                       </li>
@@ -90,7 +109,7 @@
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead">
         <div class="overlay"></div>
         <div class="container">
           <div class="row">

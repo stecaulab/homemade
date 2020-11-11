@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,16 +23,23 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+
 /* route per vedere singolo post*/
 
-Route::get('/posts/{post}', 'PostController@single');
+//Route::get('/posts/{post}', 'PostController@single');
+Route::get('/posts/{slug}', 'PostController@single');
 
 /* route per vedere tutti i post*/
 
 Route::get('/','PostController@all');
 
-/* route per Admint*/
-
-
+/* route per Admin*/
 
 Route::get('/admin/{any}', 'AdminController@index')->where('any', '.*');
+
+
+/* route per Comments*/
+
+Route::get('/{post}/comments','CommentController@index');
+Route::post('/{post}/comments','CommentController@store');
