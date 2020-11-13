@@ -26,8 +26,7 @@ Vue.component('update-component', require('./components/UpdateComponent.vue').de
 Vue.component('create-component', require('./components/CreateComponent.vue').default);
 Vue.component('comment-component', require('./components/CommentComponent.vue').default);
 
-Vue.component('app-component', require('./components/view/App.vue').default);
-Vue.component('menu-component', require('./components/view/Menu.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -53,13 +52,7 @@ Vue.component('menu-component', require('./components/view/Menu.vue').default);
         mode: 'history',
 
         routes:  [
-            // {
-            //     path:   '/welcome',
-            //     name:   'home',
-            //     component: App,
-            //     props:true,
 
-            // },
             {
 
                 path:   '/admin/dashboard',
