@@ -1,11 +1,10 @@
-<template>
-   <div>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <router-link class="navbar-brand" :to="{name: 'home'}" >
-                {{ title }}
-            </router-link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                FF-HomemadeBlog-master
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -13,10 +12,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="/about">About</a>
                       </li>
 
                       <li class="nav-item dropdown">
@@ -24,14 +23,14 @@
                           Categorie
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!-- {{-- @foreach ($categories  as $category)
+                            @foreach ( $categories as $category)
 
-                            <a class="dropdown-item" href="{{ url('categoria/' . $category->slug) }}">
+                            <a class="dropdown-item" href="{{ url('category/' . $category->slug) }}">
 
                                 {{ $category->name }}
                             </a>
 
-                            @endforeach --}} -->
+                            @endforeach
 
                         </div>
                       </li>
@@ -40,15 +39,14 @@
 
 
                       <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="/contatti">Contatti</a>
                       </li>
                 </ul>
 
+                <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                     <!-- Right Side Of Navbar -->
-
-                    <slot></slot>
-                    <!-- @guest
+                    <!-- Authentication Links -->
+                    @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
@@ -75,17 +73,8 @@
                                 </form>
                             </div>
                         </li>
-                    @endguest -->
+                    @endguest
                 </ul>
             </div>
         </div>
     </nav>
-   </div>
-</template>
-<script>
-export default {
-
-props:['title'],
-
-}
-</script>

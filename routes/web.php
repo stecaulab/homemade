@@ -23,20 +23,31 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/{any}', 'SpaController@index')->where('any', '.*');
 
-/* route per vedere singolo post*/
 
-//Route::get('/posts/{post}', 'PostController@single');
-Route::get('/posts/{slug}', 'PostController@single');
 
 /* route per vedere tutti i post*/
 
-Route::get('/','PostController@all');
+Route::redirect('/', '/welcome');
+Route::get('/welcome','PostController@all');
+
+
+
+/* route per vedere singolo post*/
+
+Route::get('/posts/{slug}', 'PostController@single');
+
+
+//route per vedeecategorie
+
+Route::get('/category/{slug}','CategoryController@all');
+
 
 /* route per Admin*/
 
 Route::get('/admin/{any}', 'AdminController@index')->where('any', '.*');
+
+
 
 
 /* route per Comments*/
