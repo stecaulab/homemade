@@ -15,9 +15,12 @@ class MainMenu extends Component
 
     public $categories;
 
-    public function __construct($categories)
+    public $currentCategory;
+
+    public function __construct($categories , $currentCategory)
     {
         $this->categories = $categories;
+        $this->currentCategory= $currentCategory;
 
     }
 

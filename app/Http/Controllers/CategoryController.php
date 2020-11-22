@@ -13,12 +13,15 @@ class CategoryController extends Controller
 
 public function all(Post $post, $slug){
 
+        $categories = Category::all();
+
         $currentCategory = Category::where('slug', '=', $slug)->first();
+
         $posts = $currentCategory->posts()
                                          ->orderBy('title')
                                          ->paginate(5);
 
-        return view('category',compact('currentCategory','posts'));
+        return view('category',compact('currentCategory','posts','categories'));
     }
 
 

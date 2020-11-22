@@ -21,33 +21,26 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('css/clean-blog.css') }}">
-    <link rel="stylesheet" href="{{asset('css/my-css.css') }}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/fontawesome/css/all.min.css') !!}">
 
 </head>
-
 <body>
-
-    <x-main-menu :categories="$categories" :CurrentCategory="$currentCategory ?? ''">
+    <x-main-menu :categories="$categories" :CurrentCategory="$currentCategory">
 
     </x-main-menu>
+    <x-subheading></x-subheading>
+<div>
 
-    {{-- <x-subheading>
+    @yield('catContent')
 
-    </x-subheading> --}}
+</div>
 
 
-     <!-- Content -->
 
-    <div id="app">
-        @yield('content')
-    </div>
-
-      <!-- Footer -->
 <x-footer></x-footer>
 
 <!-- Scripts -->
 <script src="{{asset('js/app.js') }}" defer></script>
-<script src="{{asset('js/function.js')}}" defer></script>
+<script src="{{asset('js/clean-blog.js')}}"></script>
 </body>
 </html>

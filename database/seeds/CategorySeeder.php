@@ -32,5 +32,20 @@ class CategorySeeder extends Seeder
             'slug' => 'reportage',
             'description' => $faker->paragraph(3)
         ]);
+        Category::create([
+            'name' => 'Cucito',
+            'slug' => 'Cucito',
+            'description' => $faker->paragraph(3)
+        ]);
+        Category::create([
+            'name' => 'Animali',
+            'slug' => 'Animali',
+            'description' => $faker->paragraph(3)
+        ]);
+        Category::create([
+            'name' => 'Cucina',
+            'slug' => 'Cucina',
+            'description' => $faker->paragraph(3)
+        ]);
 	}
 }

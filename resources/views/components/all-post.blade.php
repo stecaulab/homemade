@@ -24,7 +24,7 @@
                     <b>Categoria:</b>
 
                     @foreach ($post->categories as $category)
-                        <a href="{{ url('categoria/' . $category->slug) }}">{{ $category->name }}</a>
+                        <a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a>
                     @endforeach
                 </p>
             </div>
