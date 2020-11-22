@@ -21,6 +21,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('css/clean-blog.css') }}">
+    <link rel="stylesheet" href="{{asset('css/my-css.css') }}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/fontawesome/css/all.min.css') !!}">
 
 </head>
@@ -28,7 +29,7 @@
     <x-main-menu :categories="$categories" :CurrentCategory="$currentCategory">
 
     </x-main-menu>
-    <x-subheading></x-subheading>
+    {{-- <x-subheading></x-subheading> --}}
 <div>
 
     @yield('catContent')
@@ -41,6 +42,6 @@
 
 <!-- Scripts -->
 <script src="{{asset('js/app.js') }}" defer></script>
-<script src="{{asset('js/clean-blog.js')}}"></script>
+<script src="{{asset('js/function.js')}}"></script>
 </body>
 </html>
