@@ -142,7 +142,7 @@ class PostController extends Controller
      public function all()
     {
 
-        $categories = Category::all()->take(3);
+        $categories = Category::all();
 
 
 
@@ -168,3 +168,4 @@ class PostController extends Controller
         return view('single', compact('post' , 'categories'));
     }
 }
+

@@ -17,24 +17,28 @@
 
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,300;1,500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{asset('css/clean-blog.css') }}">
+    {{-- <link rel="stylesheet" href="{{asset('css/clean-blog.css') }}"> --}}
+
     <link rel="stylesheet" href="{{asset('css/my-css.css') }}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/fontawesome/css/all.min.css') !!}">
 
 </head>
 
-<body>
+<body id="myBody">
 
-    <x-main-menu :categories="$categories" :CurrentCategory="$currentCategory ?? ''">
+    {{-- <x-main-menu :categories="$categories" :CurrentCategory="$currentCategory ?? ''">
 
-    </x-main-menu>
+    </x-main-menu> --}}
 
-    {{-- <x-subheading>
 
-    </x-subheading> --}}
+    <x-subheading :categories="$categories" :CurrentCategory="$currentCategory ?? ''">
+
+    </x-subheading>
 
 
      <!-- Content -->

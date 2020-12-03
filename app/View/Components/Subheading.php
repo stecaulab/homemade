@@ -11,10 +11,17 @@ class Subheading extends Component
      *
      * @return void
      */
-    public function __construct()
+    public $categories;
+
+    public $currentCategory;
+
+    public function __construct($categories , $currentCategory)
     {
-        //
+        $this->categories = $categories;
+        $this->currentCategory= $currentCategory;
+
     }
+
 
     /**
      * Get the view / contents that represent the component.
