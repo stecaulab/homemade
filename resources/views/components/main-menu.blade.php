@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg justify-content-between">
+    <nav class="navbar navbar-expand-lg justify-content-between ddd-hero">
         <a class="navbar-brand" href="{{ url('/') }}">
             FF-HomemadeBlog-master
         </a>
@@ -29,11 +29,17 @@
                         <div class="global-subnav" aria-labelledby="navbarDropdown" id="subNav">
                             <a href="javascript:void(0)" class="close-subnav" id ="closeSubNav" onclick="closeSubnav()">&#8592;</a>
                             @foreach ( $categories as $category)
+                                @if ($category->id == 0)
+                                    @continue
+                                @endif
 
                             <a class="global-subnav-item" href="{{ url('category/' . $category->slug) }}">
 
                                 {{ $category->name }}
                             </a>
+                            @if ($category->id == 3)
+                                @break
+                            @endif
 
                             @endforeach
 

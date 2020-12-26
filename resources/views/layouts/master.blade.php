@@ -31,9 +31,9 @@
 
 <body id="myBody">
 
-    {{-- <x-main-menu :categories="$categories" :CurrentCategory="$currentCategory ?? ''">
+    <x-main-menu :categories="$categories" :CurrentCategory="$currentCategory ?? ''">
 
-    </x-main-menu> --}}
+    </x-main-menu>
 
 
     <x-subheading :categories="$categories" :CurrentCategory="$currentCategory ?? ''">

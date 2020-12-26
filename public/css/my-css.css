@@ -1,6 +1,7 @@
 body {
     font-size: 20px;
     color: #212529;
+    background-color: #fff;
     /* font-family: 'Lora', 'Times New Roman', serif; */
     /* font-family: 'Montserrat', sans-serif; */
   }
@@ -19,39 +20,34 @@ img{max-width: 100%;}
 h1,
   h2,
   h3,
-  h4,
   h5,
   h6 {
     font-weight: 800;
-    font-family: 'Montserrat','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   }
-
+h5{font-weight: 800;font-family:'Montserrat',sans-serif;}
 /* ------------------------------------------HEADER  COMPONENT STYLE-----------------------------------------------------------------------------*/
 .ff-header-background-color{
     background-color: #ad780d;
 }
+
 .ff-header-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:nowrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    height:680px;
 
-
+    height:auto;
 }
 .ff-header-content-wrap{
 
     display: flex;
     align-items: center;
-    align-content: space-around;
-
+    justify-content: space-between;
 
 }
 .ff-header-left{
     font-family: 'Montserrat',sans-serif;
-    width: auto;
+
+
+
 
 }
 .ff-header-right{
@@ -60,24 +56,36 @@ h1,
 
 
 }
-.ff-header-left h1{
+.ff-header-left-content{
+    padding-left: 50px;
+
+}
+.ff-header-left-content h1{
     font-family: 'Montserrat',sans-serif;
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 60px;
+    line-height: 70px;
+
+
+
+}
+
+.ff-header-left-content p{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+
 }
 .ff-header-right-img-cover {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    padding-left:203px;
+
 
 }
+
 /* ------------------------------------------MENU COMPONENT STYLE-----------------------------------------------------------------------------*/
 #openNav{
     font-size:30px;
     cursor: pointer;
-
-
 }
 
 ul {
@@ -93,6 +101,7 @@ ul {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10;
 }
  .global_nav_open{
      width: 44px;
@@ -101,6 +110,7 @@ ul {
      position: relative;
 
  }
+
 
  .global_nav_open_top{
     top: 17px;
@@ -134,12 +144,12 @@ ul {
 .overlay{
     height: 0;
     width: 100vw;
-    position: fixed; /* nav fissa*/
-    z-index: 5;
+    position: fixed;
+    z-index: 999;
     left: 0;
     top: 0;
     background-color: rgb(0, 0 , 0);
-    background-color: rgba(0, 0 ,0, 0.9);
+    background-color: rgba(0, 0 ,0,0.9);
     overflow-y: hidden;
     overflow-x: hidden;
     transition: 0.7s;
@@ -154,6 +164,7 @@ ul {
     width: 100%;
     text-align: center;
     margin-top: 30px;
+    z-index: 999;
 }
 
 .overlay a{
@@ -208,4 +219,60 @@ ul {
 
 .global-subnav a:hover {
     color: #000;
+}
+
+
+/* ------------------------------------------HOME POST STYLE-----------------------------------------------------------------------------*/
+
+.ff-home-content-section{
+    background-color: #fff;
+    padding-top: 100px;
+
+}
+.ff-home-post-container{
+    display:flex;
+
+}
+
+.ff-welcome-title-box{
+    margin-bottom: 50px;
+}
+.ff-welcome-title{
+    text-align: center;
+}
+
+.card-body h4{
+    text-transform: capitalize;
+    font-weight: 700;
+
+}
+.card-body p {
+    font-family: 'Lora',sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.ff-card-footer{
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+
+}
+.ff-card-footer p{
+    font-family: 'Lora',sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    text-transform: capitalize;
+
+}
+.ff-footer-cat{
+    margin-left: 10px;
+}
+.ff-footer-cat a{
+    color:#000;
+    text-decoration: none;
+
+
+}
+.ff-footer-cat a:hover{
+    color: #ad780d;
+    text-decoration: none;
+
 }

@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return  PostResource::collection(Post::paginate(5));
+        return  PostResource::collection(Post::paginate(10));
 
     }
 
@@ -52,7 +52,7 @@ class PostController extends Controller
                 'image'         =>      'required|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
-        $post   = new Post;
+        $post   = new Post();
 
 
         if($request->hasFile('image')) {
@@ -68,7 +68,7 @@ class PostController extends Controller
         $post->user_id          =   $request->user_id;
         $post->title            =   $request->title;
         $post->body             =   $request->body;
-
+        $post->slug             =   Str::slug($post->title);
         $post->save();
 
         return new PostResource($post);
@@ -146,7 +146,7 @@ class PostController extends Controller
 
 
 
-        $posts = Post::with('categories','user')->simplePaginate(5);
+        $posts = Post::with('categories','user')->simplePaginate(4);
         return view('landing',[
 
                 'posts'      =>     $posts,

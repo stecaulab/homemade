@@ -3,36 +3,43 @@
 
 @endsection
 @section('content')
-<div class="container">
-  <div class="row align-items-center">
-    <div class="col-md-8 mx-auto">
-      <h1 class="my-5 text-center">Welcome to the Blog </h1>
-
-      @foreach ($posts as $post)
-        <div class="card mb-4">
-            <img class="card-img-top" src=" {!! !empty($post->image) ? '/uploads/posts/' . $post->image :  'http://placehold.it/750x300' !!} " alt="Card image cap">
-            <div class="card-body">
-            <h2 class="card-title text-center">{{ $post->title }}</h2>
-            <p class="card-text"> {{ Str::limit($post->body, $limit = 280, $end = '...') }} </p>
-            <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-                Posted {{ $post->created_at->diffForHumans() }} by
-                <a href="#">{{ $post->user->name }} </a>
-
-                <p>
-                    <b>Categoria:</b>
-
-                    @foreach ($post->categories as $category)
-                        <a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a>
-                    @endforeach
-                </p>
-            </div>
-
-        </div>
-      @endforeach
-
-    </div>
-  </div>
+<section class="ff-home-content-section container-fluid">
+<div class="ff-welcome-title-box">
+    <h1 class="ff-welcome-title">Welcome to the Blog </h1>
 </div>
+    <div class="row row-cols-1 row-cols-md-4 g-3">
+        @foreach ($posts as $post)
+            <div class="col mb-5" id="postCard">
+                <div class="card h-100">
+                    <img class="card-img-top" src=" {!! !empty($post->image) ? '/uploads/posts/' . $post->image :  'http://placeholder.com/750x300' !!} " alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">{{ $post->title }}</h4>
+                            <p class="card-text"> {{ Str::limit($post->body, $limit = 280, $end = '...') }} </p>
+                            <a href="/posts/{{ $post->slug }}" class="btn btn-outline-dark">Leggi Tutto &rarr;</a>
+                        </div>
+
+                        <div class="ff-card-footer text-muted">
+                            <div class="ff-footer-cat">
+                            <p> Posted {{ $post->created_at->diffForHumans() }} by:
+                                    <a href="#">{{ $post->user->name }} </a>
+                                </p>
+                                <p>
+                                    <h6>Categoria:</h6>
+
+                                    @foreach ($post->categories as $category)
+                                        <a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a>
+                                    @endforeach
+                                </p>
+                        </div>
+                        </div>
+                </div>
+             </div>
+        @endforeach
+    </div>
+</section>
+{{ $posts->links() }}
 @endsection
+
+
+
+
