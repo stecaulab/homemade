@@ -1,0 +1,277 @@
+body {
+    font-size: 20px;
+    color:  $body-default-color;
+    background-color: $body-bg;
+
+  }
+
+  p {
+    line-height: $line-height-base;
+    margin: 30px 0;
+  }
+
+  p a {
+    text-decoration: underline;
+  }
+
+img{max-width: 100%;}
+
+h1,
+  h2,
+  h3,
+  h5,
+  h6 {
+    font-weight: 800;
+    font-family:$font-family-second-sans-serif;
+
+  }
+
+h4{font-weight: 800; font-family: $font-family-second-sans-serif;}
+/* ------------------------------------------HEADER  COMPONENT STYLE-----------------------------------------------------------------------------*/
+.ff-header-background-color{
+    background-color: $header-default-bg-color;
+}
+
+.ff-header-container{
+
+    height:auto;
+}
+.ff-header-content-wrap{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.ff-header-left{
+    font-family: $font-family-second-sans-serif;
+
+
+
+
+}
+.ff-header-right{
+    font-family: $font-family-second-sans-serif;
+
+
+
+}
+.ff-header-left-content{
+    padding-left: 50px;
+
+}
+.ff-header-left-content h1{
+    font-family: $font-family-second-sans-serif;
+    font-size: 60px;
+    line-height: 70px;
+
+
+
+}
+
+.ff-header-left-content p{
+    font-family: $font-family-second-sans-serif;
+    font-size: 18px;
+
+}
+.ff-header-right-img-cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+
+}
+
+/* ------------------------------------------MENU COMPONENT STYLE-----------------------------------------------------------------------------*/
+#openNav{
+    font-size:30px;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+ }
+
+
+.ddd-hero{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+ .global_nav_open{
+     width: 44px;
+     height: 44px;
+     display: block;
+     position: relative;
+
+ }
+
+
+ .global_nav_open_top{
+    top: 17px;
+    display: block;
+    width: 23px;
+    height: 2px;
+    position: absolute;
+    left: 8px;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-delay: 0;
+    transition-timing-function: cubic-bezier(.66,0,.34,1);
+
+ }
+
+.global_nav_open_bottom{
+    bottom: 17px;
+    display: block;
+    width: 33px;
+    height: 2px;
+    position: absolute;
+    left: 8px;
+
+}
+
+ .bg--Color--panda-black{
+    background-color: $custom-color-bg-nav;
+}
+
+
+.overlay{
+    height: 0;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0 , 0);
+    background-color: rgba(0, 0 ,0,0.9);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: 0.7s;
+    font-family: $font-family-first-sans-serif;
+}
+
+
+
+
+.overlay-content{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    z-index: 999;
+}
+
+.overlay a{
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: $overlay-color-a;
+    display: block;
+    transition: 0.3s; /*transition effects on hover*/
+}
+
+.overlay a:hover {
+    color: $overlay-color-a-hover;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top:-20px;
+    right:45px;
+    font-size: 60px;
+
+}
+.global-subnav{
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    right: -83vw;
+    top: 0px;
+    z-index: 5;
+    background-color:  $global-subnav-bg-color;
+    width: 83vw;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: 0.7s;
+
+
+}
+
+
+.close-subnav{
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    font-size: 90px;
+    z-index: 6;
+}
+
+.global-subnav a:hover {
+    color:  $global-subnav-a-hover;
+}
+
+
+/* ------------------------------------------HOME POST STYLE-----------------------------------------------------------------------------*/
+
+.ff-home-content-section{
+    background-color: $white;
+    padding-top: 100px;
+
+}
+.ff-home-post-container{
+    display:flex;
+
+}
+
+.ff-welcome-title-box{
+    margin-bottom: 50px;
+}
+.ff-welcome-title{
+    text-align: center;
+}
+
+.card-body h4{
+    text-transform: capitalize;
+    font-weight: 700;
+
+}
+.card-body p {
+    font-family: $font-family-first-sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.ff-card-footer{
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+
+}
+.ff-card-footer p{
+    font-family: $font-family-first-sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    text-transform: capitalize;
+
+}
+.ff-footer-cat{
+    margin-left: 10px;
+}
+.ff-footer-cat a{
+    color: $black;
+    text-decoration: none;
+
+
+}
+.ff-footer-cat a:hover{
+    color: $header-default-bg-color;
+    text-decoration: none;
+
+}

@@ -20,7 +20,7 @@
 
                         <div class="ff-card-footer text-muted">
                             <div class="ff-footer-cat">
-                            <p> Posted {{ $post->created_at->diffForHumans() }} by:
+                            <p> Posted {{ $post->created_at->format('d-m-Y') }} by:
                                     <a href="#">{{ $post->user->name }} </a>
                                 </p>
                                 <p>
