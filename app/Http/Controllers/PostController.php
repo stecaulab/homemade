@@ -146,7 +146,7 @@ class PostController extends Controller
 
 
 
-        $posts = Post::with('categories','user')->simplePaginate(4);
+        $posts = Post::with('categories','user')->paginate(6);
         return view('landing',[
 
                 'posts'      =>     $posts,
