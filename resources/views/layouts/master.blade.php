@@ -22,8 +22,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css') }}">
-    {{-- <link rel="stylesheet" href="{{asset('css/clean-blog.css') }}"> --}}
-
     <link rel="stylesheet" href="{{asset('css/base.css') }}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/fontawesome/css/all.min.css') !!}">
 
