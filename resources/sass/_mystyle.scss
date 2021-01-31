@@ -21,8 +21,9 @@ h1,
   h3,
   h5,
   h6 {
-    font-weight: 800;
+    font-weight: 400;
     font-family:$font-family-second-sans-serif;
+    letter-spacing: 0.077em;
 
   }
 
@@ -32,54 +33,59 @@ h4{font-weight: 800; font-family: $font-family-second-sans-serif;}
     background-color: $header-default-bg-color;
 }
 
-.ff-header-container{
-
-    height:auto;
-}
-.ff-header-content-wrap{
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
 .ff-header-left{
     font-family: $font-family-second-sans-serif;
-
-
-
+    color:$white;
 
 }
+
 .ff-header-right{
     font-family: $font-family-second-sans-serif;
 
-
-
 }
+
 .ff-header-left-content{
-    padding-left: 50px;
+    text-align:left;
+    h1{
+        font-family: $font-family-second-sans-serif;
+        font-size: 60px;
+        line-height: 70px;
+    }
+    a{
+        text-decoration: none;
+        color:$white;
+
+    }
+    .btn{
+        background-color: $dark!important;
+    }
+}
+
+
+
+
+
+
+.header-right-img-padding{
+    padding-left: 20px;
+    padding-right: 20px;
 
 }
-.ff-header-left-content h1{
-    font-family: $font-family-second-sans-serif;
-    font-size: 60px;
-    line-height: 70px;
-
-
-
-}
-
 .ff-header-left-content p{
     font-family: $font-family-second-sans-serif;
     font-size: 18px;
 
 }
+.ff-header-right img{
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left:20px;
+}
 .ff-header-right-img-cover {
     height: 100%;
     width: 100%;
     object-fit: cover;
-
-
 }
 
 /* ------------------------------------------MENU COMPONENT STYLE-----------------------------------------------------------------------------*/
@@ -220,6 +226,26 @@ ul {
     color:  $global-subnav-a-hover;
 }
 
+/* ------------------------------------------HEADER PRESENTATION STYLE-----------------------------------------------------------------------------*/
+
+
+.pres-content{
+    color: #7a7a7a;
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 2em;
+    letter-spacing: 1.7px;
+    .btn{
+        color: $white;
+        background-color: $dark!important;
+        &:hover{
+            color:$yellow;
+    }
+
+    }
+}
+
 
 /* ------------------------------------------HOME POST STYLE-----------------------------------------------------------------------------*/
 
@@ -235,10 +261,38 @@ ul {
 
 .ff-welcome-title-box{
     margin-bottom: 50px;
+    h1{
+        color:$white;
+    }
+    i{
+        color:$white;
+    }
+    .triangle-background{
+        position: relative;
+    }
+    .triangle-background{
+        .triangle-svg >svg{
+            width:100%;
+            height:10vw;
+            position:relative;
+        }
+    }
+    .triangle-background.triangle-top{
+        .triangle-svg >svg{
+            transform:rotate(0deg);
+        }
+    }
+    .triangle-background.triangle-bottom{
+        .triangle-svg >svg{
+                transform:rotate(180deg);
+            }
+
+    }
 }
 .ff-welcome-title{
     text-align: center;
 }
+
 
 .card-body h4{
     text-transform: capitalize;
@@ -249,6 +303,9 @@ ul {
     font-family: $font-family-first-sans-serif;
     font-weight: 400;
     font-size: 16px;
+}
+.card-body .btn:hover{
+    color:$white;
 }
 .ff-card-footer{
     border-top: 1px solid rgba(0, 0, 0, 0.125);
@@ -276,21 +333,21 @@ ul {
 
 }
 
+
+
+
 /* ------------------------------------------PAGINATION STYLE-----------------------------------------------------------------------------*/
 
 
 .page-link{
     border: none!important;
     //color: #000!important;
-    border: 4px solid #e9e9e9!important;
+    border: 2px solid #c71585!important;
     border-radius: 10px!important;
     display: block!important;
     transition: all 0.5s ease 0s!important;
+    margin-right: 5px!important;
 }
-
-// .page-item.active .page-link{
-    // background-color: yellow!important;
-// }
 
 .page-item i {
     color:#000;
@@ -299,9 +356,9 @@ ul {
 .pagination li a.page-link:focus,
 .pagination li.active a.page-link{
     color: #000!important;
-    background: transparent!important;
+    background: #c71585!important;
     border-color: #fff!important;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3) inset,0 0 5px rgba(0,0,0,0.45)!important;
+    box-shadow: 0 0 5px rgba(199, 21, 133,0.90) inset,0 0 5px rgba(199, 21, 133,0.85)!important;
 }
 // .pagination li:first-child a.page-link,
 // .pagination li:last-child a.page-link{
@@ -310,5 +367,87 @@ ul {
 
 
 
+/* ------------------------------------------FOOTER SOCIAL-----------------------------------------------------------------------------*/
+
+footer {
+    margin-top: 50px;
+    color:#fff;
+    overflow: hidden;
+    .footer-container {
+        .footer-social{
+            text-align: center;
+                a{
+                    font-size: 42px;
+                    margin: 0 30px;
+                }
+            .footer-social-container{
+                // border-bottom: 1px solid  $separator-color;
+                padding-top: 10px;
+                padding-bottom: 40px;
+                i{
+                    color:$white;
+                }
+            }
+        }
+    }
+}
+
+.footer-container>div>row{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.gradient-hm-stong-light{
+    background: linear-gradient(31.23deg,#FAA653 0, #faa653 100%);
+}
+.triangle-background{
+    position: relative;
+}
+.triangle-background{
+    .triangle-svg >svg{
+        width:100%;
+        height:10vw;
+        position:relative;
+    }
+}
+.triangle-background.triangle-top{
+    .triangle-svg >svg{
+        transform:rotate(-180deg);
+    }
+}
 
 
+.footer-block{
+    color:$white;
+    text-align: center;
+    font-family: $font-family-second-sans-serif;
+    border-top: 1px solid #fff;
+    p{
+        margin: 10px 0;
+    }
+    a{
+        color:$white;
+        font-weight: 300;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    .footer-credits{
+        font-size:11px;
+        font-weight: 200;
+        text-transform: uppercase;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+    .footer-content{
+        padding-top: 80px;
+    }
+    .footer-content-title{
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    .footer-content-text{
+        font-size:14px;
+        margin: 20px 0;
+
+    }
+}

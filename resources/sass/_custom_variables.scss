@@ -11,13 +11,14 @@ $line-height-base: 1.6;
  // Colors
 //
  $body-default-color:     #212529;
- $header-default-bg-color:#ad780d;
- $custom-color-bg-nav:    #000;
+ $header-default-bg-color:#FF9933;
+ $header-default-bg-color-light :#F4C430;
+ $custom-color-bg-nav:    #640b43;
  $overlay-color-a:        #818181;
  $overlay-color-a-hover:  #f1f1f1;
  $global-subnav-bg-color: #fff;
  $global-subnav-a-hover:  #000;
-
+ $separator-color:        #c7539c;
 //  // Variables
 // //
 // // Variables should follow the `$component-state-property-size` formula for
@@ -33,10 +34,10 @@ $line-height-base: 1.6;
 // $gray-500: #adb5bd !default;
 // $gray-600: #6c757d !default;
 // $gray-700: #495057 !default;
-// $gray-800: #343a40 !default;
+$gray-800: #343a40 !default;
 // $gray-900: #212529 !default;
  $black:    #000;
-
+ $flower-zafferano:#c7539c;
 // $grays: () !default;
 // $grays: map-merge(
 //   (
@@ -63,7 +64,7 @@ $line-height-base: 1.6;
  $green:   #28a745;
 // $teal:    #20c997 !default;
 // $cyan:    #17a2b8 !default;
-$mypagination-color: #fff;
+$mypagination-color: #c71585;
 
 $colors: () !default;
 $colors: map-merge(
@@ -93,8 +94,8 @@ $colors: map-merge(
 $warning:       $yellow;
 // $danger:        $red !default;
 // $light:         $gray-100 !default;
-// $dark:          $gray-800 !default;
-
+$dark:          $gray-800;
+   $zafferano:      $header-default-bg-color-light;
 $theme-colors: ();
 $theme-colors: map-merge(
   (
@@ -107,7 +108,8 @@ $theme-colors: map-merge(
     // "light":      $light,
     // "dark":       $dark,
     "mypagecolor":  $mypagination-color,
-    "mylinkcolor":  $black
+    "mylinkcolor":  $black,
+    "mybtnhover":   $zafferano
   ),
   $theme-colors
 );
@@ -271,7 +273,7 @@ $link-color:                              theme-color("mylinkcolor");
 // $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
 // $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 
-$component-active-color:      $black;
+$component-active-color:      $white;
 $component-active-bg:         theme-color("mypagecolor");
 
 // $caret-width:                 .3em !default;
@@ -826,12 +828,12 @@ $component-active-bg:         theme-color("mypagecolor");
 // $pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
 // $pagination-focus-outline:          0 !default;
 
-// $pagination-hover-color:            $link-hover-color !default;
-//$pagination-hover-bg:               $gray-200;
+$pagination-hover-color:                $white;
+$pagination-hover-bg:                   $flower-zafferano;
 // $pagination-hover-border-color:     $gray-300 !default;
 
-$pagination-active-color:           $component-active-color;
- $pagination-active-bg:              $component-active-bg;
+$pagination-active-color:             $component-active-color;
+ $pagination-active-bg:               $component-active-bg;
 // $pagination-active-border-color:    $pagination-active-bg;
 
 // $pagination-disabled-color:         $gray-600 !default;

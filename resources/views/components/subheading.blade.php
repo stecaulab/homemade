@@ -1,27 +1,25 @@
-<section class="ff-header-background-color ">
-    <div class="">
-        {{-- <x-main-menu :categories="$categories" :CurrentCategory="$currentCategory ?? ''">
 
-        </x-main-menu> --}}
-        <header class="ff-header-container">
-            <div class="ff-header-content-wrap">
+<section>
+<header>
+    <div class="container-fluid ff-header-background-color header-height">
+        <div class="row align-items-center">
+            <div class="col-sm-6 col-md-6 col-lg-6">
                 <div class="ff-header-left">
                     <div class="ff-header-left-content">
-                        <h1>100% <br> HomeMade</h1>
-                        <p>Una frase ad effetto per prsentare cosa faiper desriver eil sito <br>
-                         oppure anche un post prinxipale di presentazione.</p>
+                        <h1>100% <br> ValMastallone</h1>
+                        <p>
+                           <a href="#headerpres" class="btn  btn-lg btn-outline-dark"> > &nbsp; Scopri di più</a>
+                        </p>
+
                     </div>
-
-                </div>
-                <div class="ff-header-right">
-
-                    <img src="{{ asset ("img/foto3.jpg") }}" alt="" class="ff-header-right-img-cover">
                 </div>
 
             </div>
-
-
-        </header>
-
+            <div class="col-sm-6 col-md-6 col-lg-6 header-right-img-padding">
+                <div class="ff-header-right">
+                    <img src="{{ asset ("img/foto1.jpg") }}" alt="" class="ff-header-right-img-cover">
+                </div>
+            </div>
     </div>
+</header>
 </section>

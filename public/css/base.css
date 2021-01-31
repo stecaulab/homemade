@@ -22,8 +22,9 @@ h2,
 h3,
 h5,
 h6 {
-  font-weight: 800;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.077em;
 }
 
 h4 {
@@ -34,21 +35,12 @@ h4 {
 /* ------------------------------------------HEADER  COMPONENT STYLE-----------------------------------------------------------------------------*/
 
 .ff-header-background-color {
-  background-color: #ad780d;
-}
-
-.ff-header-container {
-  height: auto;
-}
-
-.ff-header-content-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #FF9933;
 }
 
 .ff-header-left {
   font-family: "Montserrat", sans-serif;
+  color: #fff;
 }
 
 .ff-header-right {
@@ -56,7 +48,7 @@ h4 {
 }
 
 .ff-header-left-content {
-  padding-left: 50px;
+  text-align: left;
 }
 
 .ff-header-left-content h1 {
@@ -65,9 +57,30 @@ h4 {
   line-height: 70px;
 }
 
+.ff-header-left-content a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.ff-header-left-content .btn {
+  background-color: #343a40 !important;
+}
+
+.header-right-img-padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .ff-header-left-content p {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
+}
+
+.ff-header-right img {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 20px;
 }
 
 .ff-header-right-img-cover {
@@ -128,7 +141,7 @@ ul {
 }
 
 .bg--Color--panda-black {
-  background-color: #000;
+  background-color: #640b43;
 }
 
 .overlay {
@@ -205,6 +218,26 @@ ul {
   color: #000;
 }
 
+/* ------------------------------------------HEADER PRESENTATION STYLE-----------------------------------------------------------------------------*/
+
+.pres-content {
+  color: #7a7a7a;
+  font-size: 17px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 1.7px;
+}
+
+.pres-content .btn {
+  color: #fff;
+  background-color: #343a40 !important;
+}
+
+.pres-content .btn:hover {
+  color: #ffc107;
+}
+
 /* ------------------------------------------HOME POST STYLE-----------------------------------------------------------------------------*/
 
 .ff-home-content-section {
@@ -220,6 +253,32 @@ ul {
   margin-bottom: 50px;
 }
 
+.ff-welcome-title-box h1 {
+  color: #fff;
+}
+
+.ff-welcome-title-box i {
+  color: #fff;
+}
+
+.ff-welcome-title-box .triangle-background {
+  position: relative;
+}
+
+.ff-welcome-title-box .triangle-background .triangle-svg > svg {
+  width: 100%;
+  height: 10vw;
+  position: relative;
+}
+
+.ff-welcome-title-box .triangle-background.triangle-top .triangle-svg > svg {
+  transform: rotate(0deg);
+}
+
+.ff-welcome-title-box .triangle-background.triangle-bottom .triangle-svg > svg {
+  transform: rotate(180deg);
+}
+
 .ff-welcome-title {
   text-align: center;
 }
@@ -233,6 +292,10 @@ ul {
   font-family: "Lora", sans-serif;
   font-weight: 400;
   font-size: 16px;
+}
+
+.card-body .btn:hover {
+  color: #fff;
 }
 
 .ff-card-footer {
@@ -256,7 +319,7 @@ ul {
 }
 
 .ff-footer-cat a:hover {
-  color: #ad780d;
+  color: #FF9933;
   text-decoration: none;
 }
 
@@ -264,10 +327,11 @@ ul {
 
 .page-link {
   border: none !important;
-  border: 4px solid #e9e9e9 !important;
+  border: 2px solid #c71585 !important;
   border-radius: 10px !important;
   display: block !important;
   transition: all 0.5s ease 0s !important;
+  margin-right: 5px !important;
 }
 
 .page-item i {
@@ -278,8 +342,99 @@ ul {
 .pagination li a.page-link:focus,
 .pagination li.active a.page-link {
   color: #000 !important;
-  background: transparent !important;
+  background: #c71585 !important;
   border-color: #fff !important;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset, 0 0 5px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: 0 0 5px rgba(199, 21, 133, 0.9) inset, 0 0 5px rgba(199, 21, 133, 0.85) !important;
+}
+
+/* ------------------------------------------FOOTER SOCIAL-----------------------------------------------------------------------------*/
+
+footer {
+  margin-top: 50px;
+  color: #fff;
+  overflow: hidden;
+}
+
+footer .footer-container .footer-social {
+  text-align: center;
+}
+
+footer .footer-container .footer-social a {
+  font-size: 42px;
+  margin: 0 30px;
+}
+
+footer .footer-container .footer-social .footer-social-container {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+footer .footer-container .footer-social .footer-social-container i {
+  color: #fff;
+}
+
+.footer-container > div > row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.gradient-hm-stong-light {
+  background: linear-gradient(31.23deg, #FAA653 0, #faa653 100%);
+}
+
+.triangle-background {
+  position: relative;
+}
+
+.triangle-background .triangle-svg > svg {
+  width: 100%;
+  height: 10vw;
+  position: relative;
+}
+
+.triangle-background.triangle-top .triangle-svg > svg {
+  transform: rotate(-180deg);
+}
+
+.footer-block {
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  border-top: 1px solid #fff;
+}
+
+.footer-block p {
+  margin: 10px 0;
+}
+
+.footer-block a {
+  color: #fff;
+  font-weight: 300;
+}
+
+.footer-block a:hover {
+  opacity: 0.7;
+}
+
+.footer-block .footer-credits {
+  font-size: 11px;
+  font-weight: 200;
+  text-transform: uppercase;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.footer-block .footer-content {
+  padding-top: 80px;
+}
+
+.footer-block .footer-content-title {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.footer-block .footer-content-text {
+  font-size: 14px;
+  margin: 20px 0;
 }
 
