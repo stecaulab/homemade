@@ -10,7 +10,7 @@ p {
 }
 
 p a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 img {
@@ -90,6 +90,121 @@ h4 {
      object-fit: cover;
 }
 
+/*-------------------------------------------MENU SEARCH BAR----------------------------------------------------------------------------------*/
+
+.overlaySearch {
+  height: 0;
+  width: 100vw;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  transition: 0.7s;
+  font-family: "Lora", sans-serif;
+}
+
+.overlaySearch a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  /*transition effects on hover*/
+}
+
+.overlaySearch a:hover {
+  color: #f1f1f1;
+}
+
+.overlaySearch .closebtn {
+  position: absolute;
+  top: -20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.overlaySearch input[type=text],
+.overlaySearch input[type=submit] {
+  outline: none;
+}
+
+.overlaySearch input[type=text] {
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #fff;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  line-height: 60px;
+  font-size: 42px;
+  width: 1140px;
+  color: #fff;
+}
+
+.overlaySearch input[type=text]:focus {
+  color: #fff;
+}
+
+.overlaySearch ::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+  font-weight: 400;
+  font-style: italic;
+}
+
+.overlaySearch :-ms-input-placeholder {
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+  font-weight: 400;
+  font-style: italic;
+}
+
+.overlaySearch ::placeholder {
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+  font-weight: 400;
+  font-style: italic;
+}
+
+.overlaySearch :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
+  font-weight: 300;
+}
+
+.overlaySearch ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+  font-weight: 300;
+}
+
+.overlaySearch input[type=submit] {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 60px;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url(/images/search.svg?4ab6850bb78afd2ff17c6a5ccb910a0a);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
+  color: #fff;
+}
+
 /* ------------------------------------------MENU COMPONENT STYLE-----------------------------------------------------------------------------*/
 
 #openNav {
@@ -101,6 +216,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-style: italic;
 }
 
 .ddd-hero {
@@ -118,6 +234,17 @@ ul {
   position: relative;
 }
 
+.global_nav_open .btnSearch {
+  position: relative;
+  right: 55px;
+  top: 8px;
+  z-index: 35;
+}
+
+.global_nav_open .btnSearch i {
+  color: #640b43;
+}
+
 .global_nav_open_top {
   top: 17px;
   display: block;
@@ -129,6 +256,7 @@ ul {
   transition-duration: 0.5s;
   transition-delay: 0;
   transition-timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+  cursor: pointer;
 }
 
 .global_nav_open_bottom {
@@ -138,6 +266,15 @@ ul {
   height: 2px;
   position: absolute;
   left: 8px;
+  cursor: pointer;
+}
+
+.opennav {
+  width: 100%;
+  height: 100%;
+  z-index: 35;
+  position: absolute;
+  top: 0px;
 }
 
 .bg--Color--panda-black {
@@ -309,12 +446,15 @@ ul {
   text-transform: capitalize;
 }
 
-.ff-footer-cat {
+.ff-footer-cat p {
   margin-left: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #000;
+  font-family: "Work Sans", sans-serif;
 }
 
-.ff-footer-cat a {
-  color: #000;
+.ff-footer-cat p a {
   text-decoration: none;
 }
 

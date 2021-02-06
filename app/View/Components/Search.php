@@ -2,10 +2,9 @@
 
 namespace App\View\Components;
 
-
 use Illuminate\View\Component;
 
-class MainMenu extends Component
+class Search extends Component
 {
     /**
      * Create a new component instance.
@@ -15,19 +14,16 @@ class MainMenu extends Component
 
     public $categories;
 
-    public $currentCategory;
+    //public $currentCategory;
 
+    public $posts;
 
-
-    public function __construct($categories , $currentCategory)
+    public function __construct($posts,$categories)
     {
+        $this->posts = $posts;
         $this->categories = $categories;
-        $this->currentCategory= $currentCategory;
-
-
+        //$this->currentCategory= $currentCategory;
     }
-
-
 
     /**
      * Get the view / contents that represent the component.
@@ -35,10 +31,7 @@ class MainMenu extends Component
      * @return \Illuminate\View\View|string
      */
     public function render()
-
     {
-
-
-        return view('components.main-menu');
+        return view('components.search');
     }
 }

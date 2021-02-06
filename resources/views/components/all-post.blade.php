@@ -40,12 +40,7 @@
 
                         <div class="ff-card-footer text-muted">
                             <div class="ff-footer-cat">
-                            <p> Posted {{ $post->created_at->format('d-m-Y') }} by:
-                                    <a href="#">{{ $post->user->name }} </a>
-                                </p>
-                                <p>
-                                    <h6>Categoria:</h6>
-
+                            <p>  {{ $post->user->name }}  {{ $post->created_at->format('d-m-Y') }}  -
                                     @foreach ($post->categories as $category)
                                         <a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a>
                                     @endforeach

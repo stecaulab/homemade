@@ -15,12 +15,11 @@
 
     <!-- fonts -->
 
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,ital@1&400,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:ital@1&400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,300;1,500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('css/base.css') }}">
@@ -34,20 +33,10 @@
 
     </x-main-menu>
 
+     <!-- Content result serach -->
 
-    <x-subheading :categories="$categories" :CurrentCategory="$currentCategory ?? ''">
-
-    </x-subheading>
-
-    <x-presentation-header>
-
-    </x-presentation-header>
-
-
-     <!-- Content -->
-
-    <div id="app">
-        @yield('content')
+    <div>
+        @yield('searchResult')
     </div>
 
       <!-- Footer -->

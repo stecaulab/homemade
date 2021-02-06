@@ -2,7 +2,7 @@ function openNav(){
 
     document.getElementById("myNav").style.height = "100vh";
     document.getElementById("myBody").style.overflow = "hidden";
-    
+
 }
 
 function closeNav(){
@@ -23,3 +23,15 @@ function closeSubnav(){
 
 }
 
+function openSearch(){
+
+    document.getElementById("mySearch").style.height = "100vh";
+    document.getElementById("myBody").style.overflow = "hidden";
+
+}
+function closeSearch(){
+
+    document.getElementById("mySearch").style.height = "0%";
+    document.getElementById("myBody").style.overflow = "visible";
+
+}

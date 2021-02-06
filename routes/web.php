@@ -54,3 +54,7 @@ Route::get('/admin/{any}', 'AdminController@index')->where('any', '.*');
 
 Route::get('/{post}/comments','CommentController@index');
 Route::post('/{post}/comments','CommentController@store');
+
+/* route per Search*/
+
+Route::get('/search','SearchController@search');

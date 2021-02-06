@@ -2,10 +2,40 @@
         <a class="navbar-brand" href="{{ url('/') }}">
             FF-HomemadeBlog-master
         </a>
-        <div onclick="openNav()" class="global_nav_open">
+
+
+        <div class="overlaySearch" id="mySearch">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSearch()">&times;</a>
+            <div class="container overlay-content ">
+                <div class="row">
+                    {{-- button to close overlay Search --}}
+
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <form action={{ url('/search') }}>
+                            <input class="search-field" type="text" placeholder="Search" id="search" name="q" value required>
+                            <input type="submit" value="Search">
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div  class="global_nav_open">
             {{-- <span  id="openNav"  >&#9776;</span> --}}
-            <span class="bg--Color--panda-black global_nav_open_top"></span>
-            <span class="bg--Color--panda-black global_nav_open_bottom"></span>
+            <div class="btnSearch">
+                <div onclick="openSearch()">
+                    <span><i class="fas fa-search"></i></span>
+                </div>
+            </div>
+
+
+                <div onclick="openNav()" class="opennav">
+                    <span class="bg--Color--panda-black global_nav_open_top"></span>
+                    <span class="bg--Color--panda-black global_nav_open_bottom"></span>
+                </div>
+            
         </div>
 
         <div class="overlay" id="myNav">
