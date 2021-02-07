@@ -424,14 +424,14 @@ ul {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
 
 }
-.ff-card-footer p{
+.ff-card-footer span{
     font-family: $font-family-first-sans-serif;
     font-weight: 200;
     font-size: 14px;
     text-transform: capitalize;
 
 }
-.ff-footer-cat p{
+.ff-footer-cat span{
     margin-left: 10px;
     font-size:11px;
     text-transform: uppercase;
@@ -462,6 +462,7 @@ ul {
     display: block!important;
     transition: all 0.5s ease 0s!important;
     margin-right: 5px!important;
+    font-family: $font-family-second-sans-serif;
 }
 
 .page-item i {
@@ -565,4 +566,46 @@ footer {
         margin: 20px 0;
 
     }
+}
+
+
+/* ------------------------------------------SINGLE POST PAGE-----------------------------------------------------------------------------*/
+
+.article-header{
+    margin-top: 120px;
+    .date-category {
+        margin-top:100px;
+        font-size:11px;
+        text-transform: uppercase;
+        color: $black;
+        font-family: $font-family-category-card;
+        text-align: center;
+        a {
+            text-decoration: none;
+        }
+    }
+    .article-title{
+        margin-top:60px;
+        h1{
+            line-height: 49px;
+            font-size: 40px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+    }
+}
+
+.article-content{
+    padding-top: 80px;
+    font-family: $font-family-second-sans-serif;
+    p{
+        color: #000;
+        font-weight: 300;
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
+
 }

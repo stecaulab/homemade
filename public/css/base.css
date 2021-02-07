@@ -439,14 +439,14 @@ ul {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.ff-card-footer p {
+.ff-card-footer span {
   font-family: "Lora", sans-serif;
   font-weight: 200;
   font-size: 14px;
   text-transform: capitalize;
 }
 
-.ff-footer-cat p {
+.ff-footer-cat span {
   margin-left: 10px;
   font-size: 11px;
   text-transform: uppercase;
@@ -454,7 +454,7 @@ ul {
   font-family: "Work Sans", sans-serif;
 }
 
-.ff-footer-cat p a {
+.ff-footer-cat span a {
   text-decoration: none;
 }
 
@@ -472,6 +472,7 @@ ul {
   display: block !important;
   transition: all 0.5s ease 0s !important;
   margin-right: 5px !important;
+  font-family: "Montserrat", sans-serif;
 }
 
 .page-item i {
@@ -576,5 +577,49 @@ footer .footer-container .footer-social .footer-social-container i {
 .footer-block .footer-content-text {
   font-size: 14px;
   margin: 20px 0;
+}
+
+/* ------------------------------------------SINGLE POST PAGE-----------------------------------------------------------------------------*/
+
+.article-header {
+  margin-top: 120px;
+}
+
+.article-header .date-category {
+  margin-top: 100px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #000;
+  font-family: "Work Sans", sans-serif;
+  text-align: center;
+}
+
+.article-header .date-category a {
+  text-decoration: none;
+}
+
+.article-header .article-title {
+  margin-top: 60px;
+}
+
+.article-header .article-title h1 {
+  line-height: 49px;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.article-content {
+  padding-top: 80px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.article-content p {
+  color: #000;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 10px;
 }
 

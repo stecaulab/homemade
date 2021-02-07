@@ -39,6 +39,10 @@
         @yield('searchResult')
     </div>
 
+    <div>
+        @yield('singlecontent')
+    </div>
+
       <!-- Footer -->
 
 <x-footer></x-footer>

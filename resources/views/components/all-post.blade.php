@@ -40,11 +40,12 @@
 
                         <div class="ff-card-footer text-muted">
                             <div class="ff-footer-cat">
-                            <p>  {{ $post->user->name }}  {{ $post->created_at->format('d-m-Y') }}  -
+                            <span>
                                     @foreach ($post->categories as $category)
-                                        <a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a>
+                                        <a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a>  -
                                     @endforeach
-                                </p>
+                                     {{ $post->created_at->format('F d, Y') }}
+                                </span>
                         </div>
                         </div>
                 </div>
