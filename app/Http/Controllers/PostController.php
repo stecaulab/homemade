@@ -165,6 +165,7 @@ class PostController extends Controller
         $categories = Category::all()->take(3);
 
         $post = Post::with('categories' , 'user')->where('slug' , '=', $slug)->first();
+
         return view('single', compact('post' , 'categories'));
     }
 }
