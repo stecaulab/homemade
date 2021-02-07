@@ -14,11 +14,14 @@ class SinglePost extends Component
 
      public $post;
      public $user;
+     public $categories;
 
-    public function __construct($post, $user)
+    public function __construct($post, $user,$categories)
     {
-        $this->post = $post;
-        $this->user = $user;
+        $this->post       = $post;
+        $this->categories = $categories;
+        $this->user       = $user;
+
     }
 
     /**
