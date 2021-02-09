@@ -9,7 +9,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="date-category">
                     @foreach ($post->categories as $category)
-                    <a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a>  -
+                    <a href="{{ url('category/' . $category->slug) }}"> {{ $category->name }} </a>  -
                     @endforeach
                     {{ $post->created_at->format('F d, Y') }}
                  </div>

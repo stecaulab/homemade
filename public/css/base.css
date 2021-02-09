@@ -219,6 +219,10 @@ ul {
   font-style: italic;
 }
 
+.is_scrolled {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .ddd-hero {
   position: fixed;
   top: 0;
@@ -595,6 +599,11 @@ footer .footer-container .footer-social .footer-social-container i {
 }
 
 .article-header .date-category a {
+  text-decoration: none;
+}
+
+.article-header .date-category a:hover {
+  color: #FF9933;
   text-decoration: none;
 }
 

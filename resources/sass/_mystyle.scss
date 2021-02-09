@@ -195,6 +195,9 @@ ul {
 
  }
 
+ .is_scrolled{
+     background: rgba(0,0 ,0,0.5);
+ }
 
 .ddd-hero{
     position:fixed;
@@ -202,6 +205,7 @@ ul {
     left: 0;
     right: 0;
     z-index: 10;
+
 }
  .global_nav_open{
      width: 44px;
@@ -582,7 +586,12 @@ footer {
         text-align: center;
         a {
             text-decoration: none;
+             &:hover{
+                color: $header-default-bg-color;
+                text-decoration: none;
+            }
         }
+
     }
     .article-title{
         margin-top:60px;

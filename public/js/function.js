@@ -35,3 +35,20 @@ function closeSearch(){
     document.getElementById("myBody").style.overflow = "visible";
 
 }
+
+
+
+    var mh_scroll_position = 0;
+
+    $(document).scroll(function(){
+        mh_scroll_position = $(this).scrollTop();
+
+        if (mh_scroll_position > 150) {
+            $('nav').addClass('is_scrolled');
+        } else {
+            $('nav').removeClass('is_scrolled');
+        }
+
+    });
+
+
