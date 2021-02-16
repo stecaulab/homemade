@@ -27,26 +27,28 @@
 </div>
 </div>
 <div class="container">
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-3">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
         @foreach ($posts as $post)
-            <div class="col  mb-5" id="postCard">
+            <div class="col mb-5" id="postCard">
                 <div class="card h-100">
                     <img class="card-img-top" src=" {!! !empty($post->image) ? '/uploads/posts/' . $post->image :  'http://placeholder.com/750x300' !!} " alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title text-center">{{ $post->title }}</h4>
-                            <p class="card-text"> {{ Str::limit($post->body, $limit = 60, $end = '...') }} </p>
-                            <a href="/posts/{{ $post->slug }}" class="btn btn-outline-mybtnhover">Leggi Tutto &rarr;</a>
+                            <a href="/posts/{{ $post->slug }}">
+                                 <h4 class="card-title">{{ $post->title }}</h4>
+                            </a>
+                            {{-- <p class="card-text"> {{ Str::limit($post->body, $limit = 60, $end = '...') }} </p> --}}
+                            {{-- <a href="/posts/{{ $post->slug }}" class="btn btn-outline-mybtnhover">Leggi Tutto &rarr; --}}
                         </div>
 
                         <div class="ff-card-footer text-muted">
                             <div class="ff-footer-cat">
-                            <span>
+                                <span>
                                     @foreach ($post->categories as $category)
                                         <a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a>  -
                                     @endforeach
                                      {{ $post->created_at->format('F d, Y') }}
                                 </span>
-                        </div>
+                            </div>
                         </div>
                 </div>
              </div>

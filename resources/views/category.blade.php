@@ -1,17 +1,4 @@
-@extends('layouts.cat')
+@extends('layouts.second')
 
-@section('catContent')
-<h1>{{ $currentCategory->name }}</h1>
-<div>
-    @foreach ($posts as $post)
-
-        <p>title{{ $post->title }}</p>
-        <hr>
-        <p>body{{ $post->body }}</p>
-
-    @endforeach
-
-</div>
-@endsection
-
+<x-categories :posts="$posts" :currentCategory="$currentCategory"></x-categories>
 
