@@ -1,2 +1,2 @@
 @extends('layouts.second')
-<x-search :posts="$posts" :categories="$categories"></x-search>
+<x-search :posts="$posts" :categories="$categories" :find="$find"></x-search>

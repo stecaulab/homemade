@@ -8,7 +8,7 @@
                     <div class="ff-header-left-content">
                         <h1>100% <br> ValMastallone</h1>
                         <p>
-                           <a href="#headerpres" class="btn  btn-lg btn-outline-dark"> > &nbsp; Scopri di più</a>
+                           <a href="#headerpres" class="btn  btn-lg btn-outline-dark" onclick="presScroll()"> > &nbsp; Scopri di più</a>
                         </p>
 
                     </div>

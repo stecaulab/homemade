@@ -17,11 +17,13 @@ class Search extends Component
     //public $currentCategory;
 
     public $posts;
+    public $find;
 
-    public function __construct($posts,$categories)
+    public function __construct($posts,$categories,$find)
     {
         $this->posts = $posts;
         $this->categories = $categories;
+        $this->find = $find;
         //$this->currentCategory= $currentCategory;
     }
 

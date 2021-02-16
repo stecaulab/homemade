@@ -27,7 +27,7 @@ class SearchController extends Controller
                     ->get();
 
         }
-        return view('search',compact('posts','categories'));
+        return view('search',compact('posts','categories','find'));
     }
 
 

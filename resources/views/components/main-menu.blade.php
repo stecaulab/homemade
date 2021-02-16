@@ -1,4 +1,5 @@
-    <nav class="navbar navbar-expand-lg justify-content-between ddd-hero">
+<section>
+   <nav class="navbar navbar-expand-lg justify-content-between ddd-hero" id="nav">
         <a class="navbar-brand" href="{{ url('/') }}">
             FF-HomemadeBlog-master
         </a>
@@ -35,7 +36,7 @@
                     <span class="bg--Color--panda-black global_nav_open_top"></span>
                     <span class="bg--Color--panda-black global_nav_open_bottom"></span>
                 </div>
-            
+
         </div>
 
         <div class="overlay" id="myNav">
@@ -90,3 +91,4 @@
 
 
     </nav>
+</section>
