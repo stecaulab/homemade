@@ -32,6 +32,10 @@ h4 {
   font-family: "Montserrat", sans-serif;
 }
 
+.container {
+  max-width: 1240px !important;
+}
+
 /* ------------------------------------------HEADER  COMPONENT STYLE-----------------------------------------------------------------------------*/
 
 .ff-header-background-color {
@@ -424,9 +428,26 @@ ul {
   text-align: center;
 }
 
-.card-body h4 {
+.card {
+  border: 0px !important;
+}
+
+.card-body {
+  padding: 0px;
+  padding-top: 1.25rem;
+}
+
+.card-body a {
+  text-decoration: none;
+}
+
+.card-body a h4 {
   text-transform: capitalize;
   font-weight: 700;
+}
+
+.card-body a:hover {
+  color: #faa653;
 }
 
 .card-body p {
@@ -440,7 +461,8 @@ ul {
 }
 
 .ff-card-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid #640b43;
+  padding-bottom: 1.4rem;
 }
 
 .ff-card-footer span {
